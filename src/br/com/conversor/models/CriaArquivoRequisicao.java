@@ -1,23 +1,15 @@
 package br.com.conversor.models;
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-
-import java.io.FileWriter;
-import java.io.IOException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-public class SalvaRequisicao {
+public class CriaArquivoRequisicao {
     private String moedaEntrada;
     private String moedaSaida;
     private String valor;
     private String data;
     private String hora;
 
-
     public void define(){
-        Gson gson = new GsonBuilder().setPrettyPrinting().create();
-
         LocalDateTime agora = LocalDateTime.now();
         DateTimeFormatter formatterDataInvertida = DateTimeFormatter.ofPattern("dd-MM-yyyy");
         DateTimeFormatter formatterHora = DateTimeFormatter.ofPattern("HH:mm:ss");
@@ -25,15 +17,41 @@ public class SalvaRequisicao {
         hora = agora.format(formatterHora);
     }
 
-    public void salvarLog(String entrada, String saida, Double valorTotal) throws IOException {
-        define();
-        moedaEntrada = this.moedaEntrada;
-        moedaSaida = this.moedaSaida;
-        valor = String.valueOf(valorTotal);
-
-        FileWriter arquivo = new FileWriter(data + hora + ".json");
-        arquivo.write();
+    public String getMoedaEntrada() {
+        return moedaEntrada;
     }
 
+    public String getMoedaSaida() {
+        return moedaSaida;
+    }
 
+    public String getValor() {
+        return valor;
+    }
+
+    public String getData() {
+        return data;
+    }
+
+    public String getHora() {
+        return hora;
+    }
+
+    public CriaArquivoRequisicao(String moedaEntrada, String moedaSaida, String valor) {
+        this.moedaEntrada = moedaEntrada;
+        this.moedaSaida = moedaSaida;
+        this.valor = valor;
+        define();
+    }
+
+    @Override
+    public String toString() {
+        return "CriaArquivoRequisicao{" +
+                "moedaEntrada='" + moedaEntrada + '\'' +
+                ", moedaSaida='" + moedaSaida + '\'' +
+                ", valor='" + valor + '\'' +
+                ", data='" + data + '\'' +
+                ", hora='" + hora + '\'' +
+                '}';
+    }
 }
