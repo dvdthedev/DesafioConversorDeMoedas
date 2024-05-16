@@ -42,7 +42,11 @@ public class CriaArquivoRequisicao {
         this.moedaSaida = moedaSaida;
         this.valor = valor;
         define();
+        this.data = getData();
+        this.hora = getHora();
     }
+
+
 
     @Override
     public String toString() {

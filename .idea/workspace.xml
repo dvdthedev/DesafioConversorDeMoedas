@@ -5,12 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e8203950-ddc4-4e1f-8402-ae6dd6851d7f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/br/com/conversor/models/Pares.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/br/com/conversor/models/SalvaArquivoRequisicao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/br/com/conversor/models/Conversor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/conversor/models/Conversor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/br/com/conversor/models/SalvaRequisicao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/conversor/models/CriaArquivoRequisicao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/br/com/conversor/models/CriaArquivoRequisicao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/conversor/models/CriaArquivoRequisicao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/br/com/conversor/principal/Principal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/conversor/principal/Principal.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

@@ -3,6 +3,8 @@ package br.com.conversor.principal;
 import br.com.conversor.models.Conversor;
 import br.com.conversor.models.CriaArquivoRequisicao;
 import br.com.conversor.models.Pares;
+import br.com.conversor.models.SalvaArquivoRequisicao;
+import com.google.gson.JsonSyntaxException;
 
 import java.io.IOException;
 import java.util.InputMismatchException;
@@ -49,11 +51,20 @@ public class Principal {
             System.out.println(String.format("Valor em %s $%.2f convertido para %s: $%.2f",pares.getMoedaEntrada(), valor,pares.getMoedaSaida(), resultado));
 
             CriaArquivoRequisicao arquivo = new CriaArquivoRequisicao(pares.getMoedaEntrada(), pares.getMoedaSaida(), String.valueOf(valor));
+            System.out.println(arquivo);
+
+            SalvaArquivoRequisicao salvaArquivo = new SalvaArquivoRequisicao();
+            salvaArquivo.salvaJson(arquivo);
+
 
 
         } catch (InputMismatchException e){
             System.out.println("O programa esperava um número de 1 a 6 e em seguida um valor sem pontos.");
+            System.out.println(e.getMessage());
 
+        } catch (JsonSyntaxException e){
+            System.out.println("O programa não converte números negativos.");
+            System.out.println(e.getMessage());
         }
 
 
