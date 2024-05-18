@@ -1,4 +1,5 @@
 package br.com.conversor.models;
+import java.lang.reflect.Method;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
@@ -8,6 +9,8 @@ public class CriaArquivoRequisicao {
     private String valor;
     private String data;
     private String hora;
+    private String valorConvertido;
+
 
     public void define(){
         LocalDateTime agora = LocalDateTime.now();
@@ -37,25 +40,24 @@ public class CriaArquivoRequisicao {
         return hora;
     }
 
-    public CriaArquivoRequisicao(String moedaEntrada, String moedaSaida, String valor) {
+    public CriaArquivoRequisicao(String moedaEntrada, String moedaSaida, String valor, String valorConvertido) {
         this.moedaEntrada = moedaEntrada;
         this.moedaSaida = moedaSaida;
         this.valor = valor;
         define();
         this.data = getData();
         this.hora = getHora();
+        this.valorConvertido = valorConvertido;
+
     }
 
 
 
     @Override
     public String toString() {
-        return "CriaArquivoRequisicao{" +
-                "moedaEntrada='" + moedaEntrada + '\'' +
-                ", moedaSaida='" + moedaSaida + '\'' +
-                ", valor='" + valor + '\'' +
-                ", data='" + data + '\'' +
-                ", hora='" + hora + '\'' +
-                '}';
+        return "{Entrada: '" + moedaEntrada + '\'' +
+                ", Saída: '" + moedaSaida + '\'' +
+                ", valor: " + valor + '\'' +
+                ", totalConvertido: " + valorConvertido + '}';
     }
 }
