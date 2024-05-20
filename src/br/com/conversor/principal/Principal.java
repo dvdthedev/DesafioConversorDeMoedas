@@ -18,6 +18,7 @@ public class Principal {
 
             Scanner leitura = new Scanner(System.in);
             int opcao = 0;
+            SalvaArquivoRequisicao salvaArquivo = new SalvaArquivoRequisicao();
             List<CriaArquivoRequisicao> consultas = new ArrayList<>();
             while(opcao != 7) {
             System.out.println("""
@@ -56,10 +57,10 @@ public class Principal {
                System.out.println(String.format("Valor em %s $%.2f convertido para %s: $%.2f", pares.getMoedaEntrada(), valor, pares.getMoedaSaida(), resultado));
 
                CriaArquivoRequisicao arquivo = new CriaArquivoRequisicao(pares.getMoedaEntrada(), pares.getMoedaSaida(), String.valueOf(valor), String.valueOf(resultado));
-               SalvaArquivoRequisicao salvaArquivo = new SalvaArquivoRequisicao();
+
                consultas.add(arquivo);
-                System.out.println(consultas);
-               salvaArquivo.salvaJson(arquivo);
+               System.out.println(consultas);
+
 
                System.out.println("Deseja continuar? digite 1 ou 7 para sair.");
                opcao = leitura.nextInt();
@@ -68,6 +69,8 @@ public class Principal {
                 }
 
            }
+            salvaArquivo.salvaLista(consultas);
+
         } catch (InputMismatchException e){
             System.out.println("O programa esperava um número de 1 a 6 e em seguida um valor sem pontos.");
             System.out.println(e.getMessage());
