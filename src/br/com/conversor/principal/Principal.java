@@ -1,11 +1,9 @@
 package br.com.conversor.principal;
-
 import br.com.conversor.models.Conversor;
 import br.com.conversor.models.CriaArquivoRequisicao;
 import br.com.conversor.models.Pares;
 import br.com.conversor.models.SalvaArquivoRequisicao;
 import com.google.gson.JsonSyntaxException;
-
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
